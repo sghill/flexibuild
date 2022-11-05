@@ -29,14 +29,14 @@ public class GradleWrapper implements BuildTool {
 
     @Override
     public OutputStream stdout() {
-        return IoBuilder.forLogger("gradle-out")
+        return IoBuilder.forLogger("gradle/out")
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }
 
     @Override
     public OutputStream stderr() {
-        return IoBuilder.forLogger("gradle-err")
+        return IoBuilder.forLogger("gradle/err")
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }

@@ -28,14 +28,14 @@ public class Maven implements BuildTool {
 
     @Override
     public OutputStream stdout() {
-        return IoBuilder.forLogger("mvn-out")
+        return IoBuilder.forLogger("mvn/out")
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }
 
     @Override
     public OutputStream stderr() {
-        return IoBuilder.forLogger("mvn-err")
+        return IoBuilder.forLogger("mvn/err")
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }

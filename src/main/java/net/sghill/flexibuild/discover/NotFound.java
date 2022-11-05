@@ -5,6 +5,8 @@ import org.apache.logging.log4j.io.IoBuilder;
 
 import java.io.OutputStream;
 
+import static net.sghill.flexibuild.Main.LOGGER;
+
 public class NotFound implements BuildTool {
     private static final String NOT_FOUND = "echo '[ERROR] no build tool found' && exit 222";
     
@@ -30,14 +32,14 @@ public class NotFound implements BuildTool {
 
     @Override
     public OutputStream stdout() {
-        return IoBuilder.forLogger("notfound-out")
+        return IoBuilder.forLogger(LOGGER)
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }
 
     @Override
     public OutputStream stderr() {
-        return IoBuilder.forLogger("notfound-err")
+        return IoBuilder.forLogger(LOGGER)
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }

@@ -5,6 +5,8 @@ import org.apache.logging.log4j.io.IoBuilder;
 
 import java.io.OutputStream;
 
+import static net.sghill.flexibuild.Main.LOGGER;
+
 public class DiscoveryError implements BuildTool {
     private static final String ERROR = "echo '[ERROR] filesystem error during discovery' && exit 223";
     
@@ -30,14 +32,14 @@ public class DiscoveryError implements BuildTool {
 
     @Override
     public OutputStream stdout() {
-        return IoBuilder.forLogger("discovery-out")
+        return IoBuilder.forLogger(LOGGER)
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }
 
     @Override
     public OutputStream stderr() {
-        return IoBuilder.forLogger("discovery-err")
+        return IoBuilder.forLogger(LOGGER)
                 .setLevel(Level.INFO)
                 .buildOutputStream();
     }
