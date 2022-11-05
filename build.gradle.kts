@@ -40,3 +40,26 @@ dependencyLocking {
 tasks.test {
     useJUnitPlatform()
 }
+
+val dockerDir = layout.buildDirectory.dir("docker-prep")
+val dockerPrepare = tasks.register<Copy>("dockerPrepare") {
+    from(tasks.named("distZip"))
+    from(layout.projectDirectory.file("Dockerfile").asFile)
+    destinationDir = dockerDir.get().asFile
+}
+
+tasks.register<Exec>("dockerBuild") {
+    dependsOn(dockerPrepare)
+    commandLine = listOf(
+        "docker",
+        "build",
+        "--build-arg",
+        "PROJECT_VERSION=${project.version}",
+        "--build-arg",
+        "PROJECT_ARCHIVE=${tasks.named("distZip").get().outputs.files.singleFile.name}",
+        "-t",
+        "sghill/flexibuild:${project.version.toString().substringBefore("+")}",
+        "."
+    )
+    workingDir = dockerDir.get().asFile
+}
