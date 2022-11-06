@@ -21,7 +21,7 @@ public class Maven implements BuildTool {
 
     @Override
     public String pkg() {
-        return mvn("package", "hpi:hpi");
+        return mvn("-DskipTests=true", "package", "hpi:hpi");
     }
 
     @Override
