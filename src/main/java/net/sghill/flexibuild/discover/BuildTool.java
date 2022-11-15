@@ -1,13 +1,20 @@
 package net.sghill.flexibuild.discover;
 
-import java.io.OutputStream;
+import org.apache.commons.exec.PumpStreamHandler;
 
-public interface BuildTool {
+import java.io.Closeable;
+import java.io.IOException;
+import java.nio.file.Path;
+
+public interface BuildTool extends Closeable {
     String smokeTestTool();
     String compile();
     String pkg();
     String test();
-    
-    OutputStream stdout();
-    OutputStream stderr();
+
+    PumpStreamHandler teeErrorsTo(Path path);
+
+    @Override
+    default void close() throws IOException {
+    }
 }

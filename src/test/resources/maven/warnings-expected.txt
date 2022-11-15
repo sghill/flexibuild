@@ -1,0 +1,14 @@
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:3.35 is missing, no dependency information available
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins.workflow:workflow-cps-parent:pom:999999-SNAPSHOT
+[ERROR] Failed to execute goal org.jenkins-ci.tools:maven-hpi-plugin:3.35:hpi (default-cli) on project workflow-cps-parent: Missing /home/circleci/project/workflow-cps-plugin/target/classes/index.jelly. Delete any <description> from pom.xml and create src/main/resources/index.jelly:
+[ERROR] <?jelly escape-by-default='true'?>
+[ERROR] <div>
+[ERROR]     The description here…
+[ERROR] </div>
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

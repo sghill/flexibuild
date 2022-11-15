@@ -1,0 +1,83 @@
+[INFO] Scanning for projects...
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:3.35 is missing, no dependency information available
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins.workflow:workflow-cps-parent:pom:999999-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Pipeline: Groovy Parent                                            [pom]
+[INFO] CpsDefaultGroovyMethods generator                                  [jar]
+[INFO] Groovy CPS Execution                                               [jar]
+[INFO] Pipeline: Groovy                                                   [hpi]
+[INFO] 
+[INFO] --------< org.jenkins-ci.plugins.workflow:workflow-cps-parent >---------
+[INFO] Building Pipeline: Groovy Parent 999999-SNAPSHOT                   [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:display-info (display-info) @ workflow-cps-parent ---
+[INFO] Maven Version: 3.8.6
+[INFO] JDK Version: 11.0.17 normalized as: 11.0.17
+[INFO] Java Vendor: Eclipse Adoptium
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 5.15.0-1021-aws
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (display-info) @ workflow-cps-parent ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (no-snapshots-in-release) @ workflow-cps-parent ---
+[INFO] 
+[INFO] --- gmavenplus-plugin:2.1.0:addTestSources (test-in-groovy) @ workflow-cps-parent ---
+[INFO] 
+[INFO] --- localizer-maven-plugin:1.31:generate (default) @ workflow-cps-parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.3.0:flatten (flatten) @ workflow-cps-parent ---
+[INFO] Generating flattened POM of project org.jenkins-ci.plugins.workflow:workflow-cps-parent:pom:999999-SNAPSHOT...
+[INFO] 
+[INFO] --- gmavenplus-plugin:2.1.0:generateTestStubs (test-in-groovy) @ workflow-cps-parent ---
+[INFO] No sources specified for stub generation. Skipping.
+[INFO] Generated 0 stubs.
+[INFO] 
+[INFO] --- maven-antrun-plugin:3.1.0:run (createTempDir) @ workflow-cps-parent ---
+[INFO] Executing tasks
+[INFO]     [mkdir] Created dir: /home/circleci/project/workflow-cps-plugin/target/tmp
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- gmavenplus-plugin:2.1.0:compileTests (test-in-groovy) @ workflow-cps-parent ---
+[INFO] No sources specified for compilation. Skipping.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.22:check (check) @ workflow-cps-parent ---
+[INFO] Signature checking is skipped.
+[INFO] 
+[INFO] --- maven-license-plugin:1.15:process (default) @ workflow-cps-parent ---
+[INFO] Generated /home/circleci/project/workflow-cps-plugin/target/workflow-cps-parent/WEB-INF/licenses.xml
+[INFO] 
+[INFO] --- maven-jar-plugin:3.3.0:test-jar (maybe-test-jar) @ workflow-cps-parent ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-hpi-plugin:3.35:hpi (default-cli) @ workflow-cps-parent ---
+[INFO] Generating /home/circleci/project/workflow-cps-plugin/target/workflow-cps-parent/META-INF/MANIFEST.MF
+[INFO] Checking for attached .jar artifact ...
+[INFO] Generating jar /home/circleci/project/workflow-cps-plugin/target/workflow-cps-parent.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Pipeline: Groovy Parent 999999-SNAPSHOT:
+[INFO] 
+[INFO] Pipeline: Groovy Parent ............................ FAILURE [ 45.732 s]
+[INFO] CpsDefaultGroovyMethods generator .................. SKIPPED
+[INFO] Groovy CPS Execution ............................... SKIPPED
+[INFO] Pipeline: Groovy ................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:03 min
+[INFO] Finished at: 2022-11-07T03:40:06Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.jenkins-ci.tools:maven-hpi-plugin:3.35:hpi (default-cli) on project workflow-cps-parent: Missing /home/circleci/project/workflow-cps-plugin/target/classes/index.jelly. Delete any <description> from pom.xml and create src/main/resources/index.jelly:
+[ERROR] <?jelly escape-by-default='true'?>
+[ERROR] <div>
+[ERROR]     The description here…
+[ERROR] </div>
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[flexibuild] 03:40:07.016 Failed to run

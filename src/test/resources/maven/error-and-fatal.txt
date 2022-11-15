@@ -1,0 +1,22 @@
+[INFO] Scanning for projects...
+[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[FATAL] Non-resolvable parent POM for org.jenkins-ci.plugins:zentimestamp:4.3-SNAPSHOT: Could not transfer artifact org.jenkins-ci.plugins:plugin:pom:1.613 from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/, default, releases+snapshots)] and 'parent.relativePath' points at wrong local POM @ line 5, column 13
+ @ 
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]   
+[ERROR]   The project org.jenkins-ci.plugins:zentimestamp:4.3-SNAPSHOT (/home/circleci/project/zentimestamp-plugin/pom.xml) has 1 error
+[ERROR]     Non-resolvable parent POM for org.jenkins-ci.plugins:zentimestamp:4.3-SNAPSHOT: Could not transfer artifact org.jenkins-ci.plugins:plugin:pom:1.613 from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/, default, releases+snapshots)] and 'parent.relativePath' points at wrong local POM @ line 5, column 13 -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
+[flexibuild] 03:57:20.800 Failed to run
+org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404) ~[commons-exec-1.3.jar:1.3]
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166) ~[commons-exec-1.3.jar:1.3]
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:153) ~[commons-exec-1.3.jar:1.3]
+	at net.******.flexibuild.Main.run(Main.java:55) ~[flexibuild-0.1.0-dev.7+0369770.jar:?]
+	at net.******.flexibuild.Main.main(Main.java:28) ~[flexibuild-0.1.0-dev.7+0369770.jar:?]

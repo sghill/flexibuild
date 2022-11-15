@@ -12,6 +12,9 @@ dependencyResolutionManagement {
             library("commons-exec", "org.apache.commons", "commons-exec").version {
                 strictly("[1.3, 2.0[")
             }
+            library("commons-io", "commons-io", "commons-io").version {
+                strictly("[2.11.0, 3.0.0[")
+            }
             library("jimfs", "com.google.jimfs", "jimfs").version {
                 strictly("[1.2, 2.0[")
             }

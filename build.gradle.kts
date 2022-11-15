@@ -23,6 +23,7 @@ dependencies {
     implementation(libs.log4j.core)
     implementation(libs.log4j.iostreams)
     implementation(libs.commons.exec)
+    implementation(libs.commons.io)
 
     testImplementation(libs.assertj)
     testImplementation(libs.jimfs)

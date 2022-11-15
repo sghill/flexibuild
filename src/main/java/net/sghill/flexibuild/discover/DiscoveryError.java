@@ -1,9 +1,11 @@
 package net.sghill.flexibuild.discover;
 
+import org.apache.commons.exec.PumpStreamHandler;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.io.IoBuilder;
 
 import java.io.OutputStream;
+import java.nio.file.Path;
 
 import static net.sghill.flexibuild.Main.LOGGER;
 
@@ -31,16 +33,10 @@ public class DiscoveryError implements BuildTool {
     }
 
     @Override
-    public OutputStream stdout() {
-        return IoBuilder.forLogger(LOGGER)
+    public PumpStreamHandler teeErrorsTo(Path path) {
+        OutputStream outputStream = IoBuilder.forLogger(LOGGER)
                 .setLevel(Level.INFO)
                 .buildOutputStream();
-    }
-
-    @Override
-    public OutputStream stderr() {
-        return IoBuilder.forLogger(LOGGER)
-                .setLevel(Level.INFO)
-                .buildOutputStream();
+        return new PumpStreamHandler(outputStream);
     }
 }
